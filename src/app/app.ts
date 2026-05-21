@@ -1,129 +1,96 @@
-import { AfterViewInit, Component, OnDestroy, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+
+export type PilarIcon = 'workout' | 'evolution' | 'routine' | 'heart';
 
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet],
   templateUrl: './app.html',
 })
-export class App implements AfterViewInit, OnDestroy {
+export class App {
+  protected readonly coachName = 'Sterphane';
   protected readonly currentYear = new Date().getFullYear();
   protected readonly whatsappUrl =
-    'https://wa.me/5500000000000?text=Ol%C3%A1%20Smorgana!%20Quero%20saber%20mais%20sobre%20a%20consultoria%20online.';
+    'https://wa.me/5500000000000?text=Ol%C3%A1%20Sterphane!%20Quero%20come%C3%A7ar%20minha%20transforma%C3%A7%C3%A3o%20na%20consultoria%20online.';
   protected readonly instagramUrl = 'https://instagram.com/';
 
-  protected readonly headerScrolled = signal(false);
+  protected readonly heroTags = [
+    { icon: 'user', label: 'Acompanhamento individual' },
+    { icon: 'clipboard', label: 'Plano personalizado' },
+    { icon: 'chat', label: 'Atendimento próximo' },
+  ];
 
   protected readonly pilares = [
     {
-      emoji: '🏋️',
-      title: 'Treinos',
-      desc: 'Planejamento sob medida para seu tempo, seu corpo e seus objetivos — sem fórmula pronta.',
+      icon: 'workout' as PilarIcon,
+      title: 'Treinos personalizados',
+      desc: 'Treinos adaptados ao seu corpo, tempo disponível e objetivo — sem fórmula pronta.',
     },
     {
-      emoji: '🫧',
-      title: 'Rotina de cuidados',
-      desc: 'Hábitos sustentáveis de autocuidado que vão além da balança e fortalecem sua rotina.',
+      icon: 'evolution' as PilarIcon,
+      title: 'Evolução constante',
+      desc: 'Seu plano é ajustado conforme sua evolução para evitar estagnação e manter resultados reais.',
     },
     {
-      emoji: '👶',
-      title: 'A real da maternidade',
-      desc: 'Estratégias honestas para quem concilia filhos, casa, trabalho e ainda quer se priorizar.',
+      icon: 'routine' as PilarIcon,
+      title: 'Rotina sustentável',
+      desc: 'Estratégias simples para criar hábitos que você realmente consegue manter no dia a dia.',
     },
     {
-      emoji: '😄',
-      title: 'Humor fitness',
-      desc: 'Processo leve e humano — porque consistência vem de prazer, não de culpa.',
+      icon: 'heart' as PilarIcon,
+      title: 'Processo leve e humano',
+      desc: 'Sem terrorismo fitness. Você evolui com apoio, proximidade e constância — não na base da culpa.',
     },
   ];
 
-  protected readonly consultoriaItems = [
-    'Avaliação inicial e definição de metas realistas',
-    'Treinos personalizados e atualizados conforme sua evolução',
-    'Orientação em rotina de cuidados e hábitos',
-    'Suporte para a rotina de mãe — sem culpa, com estratégia',
-    'Acompanhamento via WhatsApp durante a consultoria',
+  protected readonly consultoriaSteps = [
+    {
+      title: 'Avaliação inicial',
+      desc: 'Entendemos sua rotina, dificuldades, objetivos e definimos metas reais para o seu momento.',
+    },
+    {
+      title: 'Treino personalizado',
+      desc: 'Você recebe treinos feitos para sua realidade e adaptados conforme sua evolução.',
+    },
+    {
+      title: 'Ajustes e acompanhamento',
+      desc: 'Nada fica parado. Seu plano evolui junto com você durante a consultoria.',
+    },
+    {
+      title: 'Estratégias para sua rotina',
+      desc: 'Você aprende a encaixar treino, autocuidado e constância no seu dia a dia sem viver cansada do processo.',
+    },
+    {
+      title: 'Acompanhamento próximo',
+      desc: 'Dúvidas, apoio e orientação durante toda a jornada.',
+    },
+  ];
+
+  protected readonly paraQuem = [
+    'Para mulheres que querem mudar o corpo sem viver em dietas malucas',
+    'Para quem já tentou começar várias vezes e desistiu no meio do caminho',
+    'Para quem quer autoestima, constância e resultado de forma saudável',
+    'Para quem busca acompanhamento próximo e não um PDF genérico',
+    'Para quem quer um processo leve, mas eficiente',
   ];
 
   protected readonly depoimentos = [
     {
-      text: 'Finalmente um treino que cabe entre escola, trabalho e casa. Me sinto vista, não julgada.',
-      autor: 'Aluna — mãe de 2',
+      text: 'Finalmente consegui manter uma rotina sem me sentir pressionada o tempo todo.',
+      autor: 'Aluna da consultoria',
     },
     {
-      text: 'A autoestima subiu antes mesmo da balança mexer. O humor e o carinho fazem toda diferença.',
-      autor: 'Aluna — consultoria online',
+      text: 'Minha autoestima mudou antes mesmo do meu corpo começar a mudar.',
+      autor: 'Aluna da consultoria',
     },
     {
-      text: 'Rotina de cuidados que eu consigo manter. Pela primeira vez não desisti no meio do caminho.',
-      autor: 'Aluna — 3 meses de acompanhamento',
+      text: 'Pela primeira vez senti que alguém realmente montou algo pensando na minha vida.',
+      autor: 'Aluna da consultoria',
     },
   ];
-
-  protected readonly marqueeItems = [
-    'Consultoria 100% online',
-    'Treinos personalizados',
-    'Rotina de cuidados',
-    'Maternidade real',
-    'Humor fitness',
-    'Acompanhamento próximo',
-    'Autoestima em primeiro lugar',
-  ];
-
-  protected readonly stats = [
-    { value: '100%', label: 'Online' },
-    { value: '1:1', label: 'Acompanhamento' },
-    { value: '24/7', label: 'Suporte WhatsApp' },
-  ];
-
-  private observer?: IntersectionObserver;
-  private scrollListener?: () => void;
-
-  ngAfterViewInit(): void {
-    this.setupScrollReveal();
-    this.setupHeaderScroll();
-  }
-
-  ngOnDestroy(): void {
-    this.observer?.disconnect();
-    if (this.scrollListener) {
-      window.removeEventListener('scroll', this.scrollListener);
-    }
-  }
 
   protected scrollTo(id: string): void {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-  }
-
-  private setupScrollReveal(): void {
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const elements = document.querySelectorAll('.reveal');
-
-    if (prefersReduced) {
-      elements.forEach((el) => el.classList.add('visible'));
-      return;
-    }
-
-    this.observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            this.observer?.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' },
-    );
-
-    elements.forEach((el) => this.observer?.observe(el));
-  }
-
-  private setupHeaderScroll(): void {
-    this.scrollListener = () => {
-      this.headerScrolled.set(window.scrollY > 24);
-    };
-    window.addEventListener('scroll', this.scrollListener, { passive: true });
-    this.scrollListener();
   }
 }

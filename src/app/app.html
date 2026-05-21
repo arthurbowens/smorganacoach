@@ -1,31 +1,24 @@
-<div class="noise-overlay mesh-bg min-h-screen text-ink">
-  <!-- Ambient orbs -->
-  <div class="orb orb-1 -top-32 right-0 opacity-70" aria-hidden="true"></div>
-  <div class="orb orb-2 top-1/3 -left-32 opacity-50" aria-hidden="true"></div>
-  <div class="orb orb-3 bottom-1/4 right-1/4 opacity-40" aria-hidden="true"></div>
-
+<div class="min-h-screen bg-brand-50 text-ink">
   <!-- Header -->
-  <header
-    class="fixed inset-x-0 top-0 z-50 transition-all duration-500"
-    [class]="headerScrolled()
-      ? 'border-b border-brand-200/50 bg-white/80 py-3 shadow-lg shadow-brand-900/5 backdrop-blur-xl'
-      : 'border-b border-transparent bg-transparent py-5'"
-  >
+  <header class="fixed inset-x-0 top-0 z-50 border-b border-brand-200/60 bg-white/95 py-4">
     <div class="mx-auto flex max-w-6xl items-center justify-between px-5 lg:px-8">
-      <a href="#" class="group font-display text-2xl tracking-tight">
-        <span class="text-gradient font-bold">Smorgana</span>
-        <span class="ml-1 font-normal text-brand-600 transition group-hover:text-brand-500">Coach</span>
+      <a href="#" class="font-display text-2xl tracking-tight">
+        <span class="font-bold text-brand-800">Smorgana</span>
+        <span class="font-normal text-brand-600"> Coach</span>
       </a>
 
-      <nav class="hidden items-center gap-10 md:flex">
-        <button type="button" (click)="scrollTo('pilares')" class="nav-link text-sm font-medium text-ink-muted transition hover:text-brand-700">
-          O que você ganha
+      <nav class="hidden items-center gap-8 md:flex">
+        <button type="button" (click)="scrollTo('pilares')" class="text-sm font-medium text-ink-muted hover:text-brand-700">
+          Método
         </button>
-        <button type="button" (click)="scrollTo('sobre')" class="nav-link text-sm font-medium text-ink-muted transition hover:text-brand-700">
-          Sobre mim
+        <button type="button" (click)="scrollTo('sobre')" class="text-sm font-medium text-ink-muted hover:text-brand-700">
+          Sobre
         </button>
-        <button type="button" (click)="scrollTo('consultoria')" class="nav-link text-sm font-medium text-ink-muted transition hover:text-brand-700">
+        <button type="button" (click)="scrollTo('consultoria')" class="text-sm font-medium text-ink-muted hover:text-brand-700">
           Consultoria
+        </button>
+        <button type="button" (click)="scrollTo('para-quem')" class="text-sm font-medium text-ink-muted hover:text-brand-700">
+          Para quem
         </button>
       </nav>
 
@@ -33,212 +26,193 @@
         [href]="whatsappUrl"
         target="_blank"
         rel="noopener noreferrer"
-        class="btn-primary hidden rounded-full px-6 py-2.5 text-sm font-semibold text-white sm:inline-flex"
+        class="hidden items-center gap-2 rounded-full bg-brand-700 px-5 py-2.5 text-sm font-semibold text-white hover:bg-brand-800 sm:inline-flex"
       >
+        <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.881 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
         Quero começar
       </a>
     </div>
   </header>
 
   <!-- Hero -->
-  <section class="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28">
-    <div class="relative mx-auto grid max-w-6xl items-center gap-14 px-5 lg:grid-cols-2 lg:gap-20 lg:px-8">
+  <section class="pt-32 pb-16 md:pt-40 md:pb-24">
+    <div class="mx-auto grid max-w-6xl items-center gap-14 px-5 lg:grid-cols-2 lg:gap-20 lg:px-8">
       <div class="order-2 lg:order-1">
-        <p class="badge-shimmer hero-in hero-in-1 mb-6 inline-flex items-center gap-2.5 rounded-full glass px-5 py-2 text-sm font-semibold text-brand-800">
-          <span class="relative flex h-2 w-2">
-            <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-500 opacity-75"></span>
-            <span class="relative inline-flex h-2 w-2 rounded-full bg-brand-600"></span>
-          </span>
-          Consultoria online personalizada
+        <p class="mb-5 inline-flex items-center gap-2 rounded-full bg-brand-100 px-4 py-2 text-sm font-semibold text-brand-800">
+          <svg class="h-4 w-4 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          Consultoria Online Personalizada
         </p>
 
-        <h1 class="hero-in hero-in-2 font-display text-[2.6rem] leading-[1.08] font-normal tracking-tight text-ink md:text-5xl lg:text-[3.5rem]">
-          Eleve sua <em class="text-gradient not-italic">autoestima</em> e venha mudar seu corpo
+        <h1 class="font-display text-4xl leading-tight tracking-tight text-ink md:text-5xl lg:text-[3.15rem]">
+          Transforme seu corpo sem viver presa em dieta, culpa e pressão extrema
         </h1>
 
-        <p class="hero-in hero-in-3 mt-7 max-w-lg text-lg leading-relaxed text-ink-muted">
-          Treinos que cabem na sua rotina, cuidados de verdade e a real da maternidade — com leveza e humor.
-          Tudo na minha consultoria online, feita para você.
+        <p class="mt-6 max-w-lg text-lg leading-relaxed text-ink-muted">
+          Treinos personalizados, acompanhamento próximo e uma rotina sustentável para você evoluir de verdade —
+          com leveza, autoestima e constância.
         </p>
 
-        <div class="hero-in hero-in-4 mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
-          <a
-            [href]="whatsappUrl"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn-primary inline-flex items-center justify-center gap-2.5 rounded-full px-9 py-4 text-base font-semibold text-white"
-          >
-            Quero mudar meu corpo
-            <svg class="h-5 w-5 transition group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-            </svg>
-          </a>
-          <button
-            type="button"
-            (click)="scrollTo('consultoria')"
-            class="btn-ghost inline-flex items-center justify-center gap-2 rounded-full border border-brand-300/80 bg-white/50 px-9 py-4 text-base font-semibold text-brand-800 backdrop-blur-sm"
-          >
-            Como funciona
-          </button>
-        </div>
+        <p class="mt-4 max-w-lg font-medium text-brand-800">
+          Sua evolução começa quando o processo finalmente faz sentido para a sua vida.
+        </p>
 
-        <ul class="hero-in hero-in-5 mt-12 flex flex-wrap gap-3">
-          @for (tag of ['100% online', 'Rotina real de mãe', 'Acompanhamento próximo']; track tag) {
-            <li class="flex items-center gap-2 rounded-full bg-white/60 px-4 py-2 text-sm font-medium text-ink-muted shadow-sm ring-1 ring-brand-200/60 backdrop-blur-sm">
-              <svg class="h-4 w-4 text-brand-600" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-              </svg>
-              {{ tag }}
+        <a
+          [href]="whatsappUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="mt-8 inline-flex items-center justify-center gap-2.5 rounded-full bg-brand-700 px-8 py-4 text-base font-semibold text-white hover:bg-brand-800"
+        >
+          <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.881 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          Quero começar minha transformação
+        </a>
+
+        <ul class="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          @for (tag of heroTags; track tag.label) {
+            <li class="flex items-center gap-2.5 rounded-full bg-white px-4 py-2.5 text-sm font-medium text-ink-muted ring-1 ring-brand-200">
+              @switch (tag.icon) {
+                @case ('user') {
+                  <svg class="h-4 w-4 shrink-0 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                  </svg>
+                }
+                @case ('clipboard') {
+                  <svg class="h-4 w-4 shrink-0 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                  </svg>
+                }
+                @case ('chat') {
+                  <svg class="h-4 w-4 shrink-0 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                  </svg>
+                }
+              }
+              {{ tag.label }}
             </li>
           }
         </ul>
       </div>
 
       <div class="order-1 lg:order-2">
-        <div class="hero-in hero-in-3 relative mx-auto max-w-md lg:max-w-none">
-          <div class="img-glow-ring img-zoom-wrap relative overflow-hidden rounded-[1.85rem] shadow-2xl shadow-brand-900/20">
-            <img
-              src="/foto1.jpeg"
-              alt="Smorgana Coach — personal trainer"
-              class="img-zoom relative z-10 aspect-[4/5] w-full object-cover"
-              width="560"
-              height="700"
-            />
-            <div class="pointer-events-none absolute inset-0 z-20 bg-gradient-to-t from-brand-900/30 via-transparent to-transparent"></div>
-          </div>
-
-          <div class="glass absolute -bottom-5 -left-5 z-30 rounded-2xl px-6 py-5 shadow-xl md:-left-8">
-            <p class="font-display text-3xl font-normal text-brand-700">Coach</p>
-            <p class="mt-0.5 text-sm font-medium text-ink-muted">Treino · Cuidado · Maternidade</p>
-          </div>
-
-          <div class="glass absolute -top-3 -right-3 z-30 hidden rounded-2xl px-4 py-3 shadow-lg sm:block">
-            <p class="text-2xl font-bold text-brand-600">🫶</p>
-            <p class="text-xs font-semibold text-ink-muted">Humor fitness</p>
+        <div class="relative mx-auto max-w-md lg:max-w-none">
+          <img
+            src="/foto1.jpeg"
+            [alt]="coachName + ' — Smorgana Coach'"
+            class="aspect-[4/5] w-full rounded-2xl object-cover shadow-xl"
+            width="560"
+            height="700"
+          />
+          <div class="absolute -bottom-4 -left-4 max-w-[220px] rounded-xl bg-white px-5 py-4 shadow-lg md:-left-6">
+            <p class="font-display text-xl leading-tight text-brand-800">Smorgana Coach</p>
+            <p class="text-xs text-ink-muted">consultoria online feminina</p>
+            <p class="mt-2 flex items-center gap-1.5 text-sm font-medium text-brand-700">
+              <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+              Treino · Autoestima · Constância
+            </p>
           </div>
         </div>
       </div>
     </div>
-
-    <!-- Stats bar -->
-    <div class="reveal relative mx-auto mt-20 max-w-4xl px-5 lg:px-8">
-      <div class="glass grid grid-cols-3 divide-x divide-brand-200/60 rounded-2xl py-8 shadow-lg shadow-brand-900/5">
-        @for (stat of stats; track stat.label) {
-          <div class="text-center">
-            <p class="stat-glow font-display text-3xl font-normal text-brand-700 md:text-4xl">{{ stat.value }}</p>
-            <p class="mt-1 text-xs font-semibold uppercase tracking-wider text-ink-muted md:text-sm">{{ stat.label }}</p>
-          </div>
-        }
-      </div>
-    </div>
   </section>
 
-  <!-- Marquee -->
-  <div class="relative overflow-hidden border-y border-brand-200/50 bg-white/40 py-4 backdrop-blur-sm">
-    <div class="marquee-track gap-12">
-      @for (item of [...marqueeItems, ...marqueeItems]; track $index) {
-        <span class="flex shrink-0 items-center gap-3 px-4 text-sm font-semibold uppercase tracking-widest text-brand-600/80">
-          <span class="h-1.5 w-1.5 rounded-full bg-brand-500"></span>
-          {{ item }}
-        </span>
-      }
-    </div>
-  </div>
-
   <!-- Pilares -->
-  <section id="pilares" class="relative py-24 md:py-32">
+  <section id="pilares" class="bg-white py-20 md:py-28">
     <div class="mx-auto max-w-6xl px-5 lg:px-8">
-      <div class="reveal mx-auto max-w-2xl text-center">
-        <span class="inline-block rounded-full bg-brand-100 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-brand-700">
-          Seu método
-        </span>
-        <h2 class="mt-5 font-display text-4xl font-normal tracking-tight text-ink md:text-5xl">
-          Mais do que treino: um método que <em class="text-gradient not-italic">entende sua vida</em>
+      <div class="mx-auto max-w-3xl text-center">
+        <h2 class="font-display text-3xl text-ink md:text-4xl">
+          Mais do que treino: um método que entende sua rotina
         </h2>
         <p class="mt-5 text-lg leading-relaxed text-ink-muted">
-          O que você encontra no meu perfil — e leva para dentro da consultoria.
+          Aqui, você não recebe um plano genérico feito para “qualquer pessoa”.
+        </p>
+        <p class="mt-3 text-lg leading-relaxed text-ink-muted">
+          Cada treino, ajuste e estratégia é pensado para a sua realidade, sua rotina e seus objetivos —
+          para que você consiga evoluir sem transformar sua vida em uma obrigação impossível de manter.
         </p>
       </div>
 
-      <div class="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
-        @for (pilar of pilares; track pilar.title; let i = $index) {
-          <article
-            [class]="'reveal card-lift group relative overflow-hidden rounded-3xl bg-white p-7 shadow-sm ring-1 ring-brand-100 reveal-delay-' + (i + 1)"
-          >
-            <div
-              class="pointer-events-none absolute -right-8 -top-8 h-32 w-32 rounded-full bg-brand-200/40 blur-2xl transition group-hover:bg-brand-300/50"
-              aria-hidden="true"
-            ></div>
-            <span
-              class="relative flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-100 to-brand-200/60 text-2xl shadow-inner transition group-hover:scale-110"
-              aria-hidden="true"
-            >{{ pilar.emoji }}</span>
-            <h3 class="relative mt-6 font-display text-2xl text-brand-800">{{ pilar.title }}</h3>
-            <p class="relative mt-3 text-sm leading-relaxed text-ink-muted">{{ pilar.desc }}</p>
-            <div
-              class="absolute bottom-0 left-0 h-1 w-0 rounded-full bg-gradient-to-r from-brand-500 to-accent transition-all duration-500 group-hover:w-full"
-              aria-hidden="true"
-            ></div>
+      <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        @for (pilar of pilares; track pilar.title) {
+          <article class="rounded-2xl border border-brand-100 bg-brand-50 p-6">
+            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-200/60 text-brand-700">
+              @switch (pilar.icon) {
+                @case ('workout') {
+                  <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h4l3-7 4 14 3-7h4" />
+                  </svg>
+                }
+                @case ('evolution') {
+                  <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                  </svg>
+                }
+                @case ('routine') {
+                  <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                  </svg>
+                }
+                @case ('heart') {
+                  <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                  </svg>
+                }
+              }
+            </div>
+            <h3 class="mt-5 font-display text-xl text-brand-800">{{ pilar.title }}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-ink-muted">{{ pilar.desc }}</p>
           </article>
         }
       </div>
     </div>
   </section>
 
-  <!-- Wave divider -->
-  <div class="wave-divider -mb-px text-white" aria-hidden="true">
-    <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-      <path d="M0 40C240 80 480 0 720 40C960 80 1200 0 1440 40V80H0V40Z" fill="currentColor"/>
-    </svg>
-  </div>
-
   <!-- Sobre -->
-  <section id="sobre" class="relative bg-white py-24 md:py-32">
-    <div class="mx-auto grid max-w-6xl items-center gap-16 px-5 lg:grid-cols-2 lg:gap-24 lg:px-8">
-      <div class="reveal relative">
-        <div class="absolute -inset-6 rounded-[2rem] bg-gradient-to-br from-brand-200/50 to-brand-400/20 blur-2xl" aria-hidden="true"></div>
-        <div class="img-zoom-wrap relative overflow-hidden rounded-[1.85rem] shadow-2xl shadow-brand-900/15 ring-1 ring-brand-200/50">
-          <img
-            src="/foto1.jpeg"
-            alt="Smorgana — sua coach"
-            class="img-zoom aspect-[4/5] w-full max-w-md object-cover mx-auto lg:mx-0"
-            width="480"
-            height="600"
-          />
-        </div>
-        <div class="absolute -bottom-6 -right-4 rounded-2xl bg-brand-700 px-6 py-4 text-white shadow-xl md:-right-8">
-          <p class="font-display text-4xl leading-none">⚡</p>
-          <p class="mt-1 text-xs font-bold uppercase tracking-wider opacity-90">Maternidade real</p>
-        </div>
+  <section id="sobre" class="py-20 md:py-28">
+    <div class="mx-auto grid max-w-6xl items-center gap-12 px-5 lg:grid-cols-2 lg:gap-20 lg:px-8">
+      <div>
+        <img
+          src="/foto1.jpeg"
+          [alt]="coachName + ' — Smorgana Coach'"
+          class="mx-auto aspect-[4/5] w-full max-w-md rounded-2xl object-cover shadow-xl lg:mx-0"
+          width="480"
+          height="600"
+        />
       </div>
 
-      <div class="reveal reveal-delay-2">
-        <span class="inline-block rounded-full bg-brand-100 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-brand-700">
-          Sobre mim
-        </span>
-        <h2 class="mt-5 font-display text-4xl font-normal leading-tight tracking-tight text-ink md:text-5xl">
-          Sou a Smorgana — sua coach na jornada de <em class="text-gradient not-italic">transformação</em>
+      <div>
+        <span class="text-xs font-bold uppercase tracking-widest text-brand-600">Sobre mim</span>
+        <h2 class="mt-3 font-display text-3xl text-ink md:text-4xl">
+          Sou a {{ coachName }} — sua coach na jornada de transformação
         </h2>
-        <p class="mt-7 leading-relaxed text-ink-muted">
-          Sou coach e vivo na prática o que ensino: treino, rotina de cuidados e a real da maternidade,
-          sempre com um olhar leve e acolhedor. Acredito que mudar o corpo começa por elevar a autoestima
-          e construir hábitos que cabem na sua vida — não no ideal de quem não conhece sua rotina.
+        <p class="mt-6 leading-relaxed text-ink-muted">
+          Acredito que mudar o corpo vai muito além da estética. É sobre recuperar autoestima, criar confiança
+          e construir uma rotina que funcione na vida real — sem pressão absurda e sem precisar abrir mão de quem você é.
         </p>
-        <p class="mt-5 leading-relaxed text-ink-muted">
-          Na consultoria online, você não recebe um PDF genérico: recebe um plano pensado para você,
-          com acompanhamento, ajustes e a energia de quem entende que ser mãe exige estratégia — e muito carinho consigo mesma.
+        <p class="mt-4 leading-relaxed text-ink-muted">
+          Na minha consultoria online, você recebe acompanhamento de verdade: treinos personalizados,
+          ajustes constantes e suporte durante todo o processo.
+        </p>
+        <p class="mt-4 leading-relaxed text-ink-muted">
+          Meu objetivo é te ajudar a evoluir fisicamente sem tornar o treino um peso na sua vida.
         </p>
         <a
           [href]="instagramUrl"
           target="_blank"
           rel="noopener noreferrer"
-          class="group mt-10 inline-flex items-center gap-3 rounded-full border border-brand-200 bg-brand-50 px-6 py-3 font-semibold text-brand-700 transition hover:border-brand-400 hover:bg-brand-100"
+          class="mt-8 inline-flex items-center gap-2.5 rounded-full border border-brand-200 bg-white px-6 py-3 font-semibold text-brand-700 hover:border-brand-400 hover:bg-brand-50"
         >
-          <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+          <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
           </svg>
-          Acompanhe no Instagram
-          <svg class="h-4 w-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          Acompanhar no Instagram
+          <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10" />
           </svg>
         </a>
@@ -247,80 +221,69 @@
   </section>
 
   <!-- Consultoria -->
-  <section id="consultoria" class="dark-mesh relative overflow-hidden py-24 text-brand-50 md:py-32">
-    <div class="orb orb-2 top-0 right-0 opacity-20" aria-hidden="true"></div>
-
-    <div class="relative mx-auto max-w-6xl px-5 lg:px-8">
-      <div class="grid gap-16 lg:grid-cols-2 lg:items-start">
-        <div class="reveal">
-          <span class="inline-block rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-brand-200">
-            Consultoria online
-          </span>
-          <h2 class="mt-5 font-display text-4xl font-normal leading-tight md:text-5xl">
-            Seu corpo, seu ritmo, <em class="not-italic text-brand-300">minha orientação</em>
-          </h2>
-          <p class="mt-7 text-lg leading-relaxed text-brand-200/90">
-            Um programa completo para você sair da frustração e entrar num processo estruturado —
-            com treinos, rotina e suporte de quem fala a sua língua.
-          </p>
-        </div>
-
-        <ul class="space-y-3">
-          @for (item of consultoriaItems; track item; let i = $index) {
-            <li
-              [class]="'reveal glass-dark flex items-start gap-4 rounded-2xl px-6 py-5 transition hover:bg-white/10 reveal-delay-' + ((i % 4) + 1)"
-            >
-              <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-brand-500 to-brand-600 text-sm font-bold shadow-lg">
-                {{ i + 1 }}
-              </span>
-              <span class="pt-0.5 font-medium text-brand-100">{{ item }}</span>
-            </li>
-          }
-        </ul>
+  <section id="consultoria" class="bg-brand-900 py-20 text-brand-50 md:py-28">
+    <div class="mx-auto max-w-6xl px-5 lg:px-8">
+      <div class="max-w-2xl">
+        <span class="text-xs font-bold uppercase tracking-widest text-brand-300">Como funciona a consultoria</span>
+        <h2 class="mt-3 font-display text-3xl md:text-4xl">
+          Seu corpo, seu ritmo, minha orientação
+        </h2>
+        <p class="mt-6 text-lg leading-relaxed text-brand-200">
+          Um acompanhamento completo para você sair da frustração e finalmente entrar em um processo
+          estruturado, possível e sustentável.
+        </p>
       </div>
 
-      <div class="reveal cta-glow relative mt-20 overflow-hidden rounded-3xl bg-brand-800/80 p-10 text-center backdrop-blur-sm md:p-14">
-        <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(232,165,152,0.15),transparent_60%)]" aria-hidden="true"></div>
-        <p class="relative font-display text-3xl font-normal md:text-4xl">
-          Pronta para elevar sua autoestima e mudar seu corpo?
-        </p>
-        <p class="relative mx-auto mt-5 max-w-lg text-brand-200">
-          Vagas limitadas para garantir atenção de verdade a cada aluna.
-        </p>
-        <a
-          [href]="whatsappUrl"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn-primary relative mt-10 inline-flex items-center justify-center gap-2 rounded-full px-12 py-4 text-lg font-semibold text-white"
-        >
-          Começar minha consultoria
-        </a>
-      </div>
+      <ol class="mt-12 space-y-4">
+        @for (step of consultoriaSteps; track step.title; let i = $index) {
+          <li class="flex gap-5 rounded-2xl bg-brand-800 p-6 md:items-start">
+            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-600 text-lg font-bold">
+              {{ i + 1 }}
+            </span>
+            <div>
+              <h3 class="font-semibold text-brand-50">{{ step.title }}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-brand-200">{{ step.desc }}</p>
+            </div>
+          </li>
+        }
+      </ol>
+    </div>
+  </section>
+
+  <!-- Para quem -->
+  <section id="para-quem" class="py-20 md:py-28">
+    <div class="mx-auto max-w-3xl px-5 lg:px-8">
+      <h2 class="text-center font-display text-3xl text-ink md:text-4xl">
+        Para quem é essa consultoria?
+      </h2>
+      <ul class="mt-10 space-y-4">
+        @for (item of paraQuem; track item) {
+          <li class="flex items-start gap-4 rounded-xl border border-brand-100 bg-white px-5 py-4">
+            <svg class="mt-0.5 h-5 w-5 shrink-0 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="leading-relaxed text-ink-muted">{{ item }}</span>
+          </li>
+        }
+      </ul>
     </div>
   </section>
 
   <!-- Depoimentos -->
-  <section class="py-24 md:py-32">
+  <section class="bg-brand-50 py-20 md:py-28">
     <div class="mx-auto max-w-6xl px-5 lg:px-8">
-      <div class="reveal mx-auto max-w-xl text-center">
-        <h2 class="font-display text-4xl font-normal tracking-tight text-ink md:text-5xl">
-          Por que alunas escolhem a consultoria
-        </h2>
-      </div>
+      <h2 class="text-center font-display text-3xl text-ink md:text-4xl">
+        O que minhas alunas sentem durante o processo
+      </h2>
 
-      <div class="mt-14 grid gap-6 md:grid-cols-3">
-        @for (depoimento of depoimentos; track depoimento.autor; let i = $index) {
-          <blockquote
-            [class]="'reveal card-lift relative overflow-hidden rounded-3xl bg-white p-8 shadow-sm ring-1 ring-brand-100 reveal-delay-' + (i + 1)"
-          >
-            <span class="font-display text-6xl leading-none text-brand-200" aria-hidden="true">"</span>
-            <p class="relative -mt-4 text-base leading-relaxed text-ink-muted">{{ depoimento.text }}</p>
-            <footer class="mt-6 flex items-center gap-3 border-t border-brand-100 pt-6">
-              <div class="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-brand-400 to-brand-600 text-sm font-bold text-white">
-                {{ depoimento.autor.charAt(0) }}
-              </div>
-              <span class="text-sm font-semibold text-brand-700">{{ depoimento.autor }}</span>
-            </footer>
+      <div class="mt-12 grid gap-6 md:grid-cols-3">
+        @for (depoimento of depoimentos; track depoimento.text) {
+          <blockquote class="rounded-2xl border border-brand-100 bg-white p-6">
+            <svg class="h-8 w-8 text-brand-300" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+            </svg>
+            <p class="mt-4 leading-relaxed text-ink-muted">"{{ depoimento.text }}"</p>
+            <footer class="mt-5 text-sm font-semibold text-brand-700">— {{ depoimento.autor }}</footer>
           </blockquote>
         }
       </div>
@@ -328,39 +291,70 @@
   </section>
 
   <!-- CTA final -->
-  <section class="relative overflow-hidden border-t border-brand-200/60 py-24">
-    <div class="pointer-events-none absolute inset-0 bg-gradient-to-b from-brand-100/50 to-transparent" aria-hidden="true"></div>
-    <div class="reveal relative mx-auto max-w-3xl px-5 text-center lg:px-8">
-      <h2 class="font-display text-4xl font-normal tracking-tight text-ink md:text-5xl">
-        Sua melhor versão começa com <em class="text-gradient not-italic">um clique</em>
+  <section class="border-t border-brand-200 bg-white py-20 md:py-24">
+    <div class="mx-auto max-w-3xl px-5 text-center lg:px-8">
+      <h2 class="font-display text-3xl text-ink md:text-4xl">
+        Sua transformação começa agora
       </h2>
-      <p class="mt-5 text-lg text-ink-muted">
-        Treinos · Cuidados · Maternidade real · Humor fitness 🫶
+      <p class="mt-5 leading-relaxed text-ink-muted">
+        Você não precisa esperar “a motivação perfeita” para começar. Precisa de um plano possível,
+        acompanhamento de verdade e alguém que caminhe com você no processo.
+      </p>
+      <p class="mt-4 font-medium text-brand-800">
+        As vagas são limitadas para manter um acompanhamento realmente individual.
       </p>
       <a
         [href]="whatsappUrl"
         target="_blank"
         rel="noopener noreferrer"
-        class="btn-primary mt-10 inline-flex items-center justify-center rounded-full px-12 py-4 text-lg font-semibold text-white"
+        class="mt-10 inline-flex items-center justify-center gap-2.5 rounded-full bg-brand-700 px-10 py-4 text-lg font-semibold text-white hover:bg-brand-800"
       >
-        Quero mudar meu corpo agora
+        <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.881 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        Quero entrar para a consultoria
       </a>
+      <p class="mt-8 flex items-center justify-center gap-2 text-sm font-medium text-ink-muted">
+        <svg class="h-4 w-4 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+        Smorgana Coach — Treino · Autoestima · Constância
+      </p>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="border-t border-brand-200/80 bg-white/80 py-12 backdrop-blur-sm">
+  <footer class="border-t border-brand-200 bg-brand-50 py-10">
     <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-5 sm:flex-row lg:px-8">
-      <p class="font-display text-2xl text-gradient font-normal">Smorgana Coach</p>
-      <p class="text-sm text-ink-muted">© {{ currentYear }} — Consultoria online</p>
-      <a
-        [href]="instagramUrl"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="text-sm font-semibold text-brand-700 transition hover:text-brand-900"
-      >
-        Instagram ↗
-      </a>
+      <div class="text-center sm:text-left">
+        <p class="font-display text-xl text-brand-800">Smorgana Coach</p>
+        <p class="mt-1 text-sm text-ink-muted">Treino · Autoestima · Constância</p>
+      </div>
+      <p class="text-sm text-ink-muted">© {{ currentYear }} — Consultoria Online Feminina</p>
+      <div class="flex items-center gap-4">
+        <a
+          [href]="instagramUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex h-10 w-10 items-center justify-center rounded-full bg-white text-brand-700 ring-1 ring-brand-200 hover:bg-brand-100"
+          aria-label="Instagram"
+        >
+          <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+          </svg>
+        </a>
+        <a
+          [href]="whatsappUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex h-10 w-10 items-center justify-center rounded-full bg-[#25D366] text-white hover:bg-[#20bd5a]"
+          aria-label="WhatsApp"
+        >
+          <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.881 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+        </a>
+      </div>
     </div>
   </footer>
 
@@ -369,7 +363,7 @@
     [href]="whatsappUrl"
     target="_blank"
     rel="noopener noreferrer"
-    class="pulse-ring fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-2xl shadow-[#25D366]/40 transition hover:scale-110 hover:shadow-[#25D366]/60"
+    class="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg hover:bg-[#20bd5a]"
     aria-label="Falar no WhatsApp"
   >
     <svg class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24">
